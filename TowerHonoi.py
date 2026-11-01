@@ -5,7 +5,7 @@ from collections import deque
 def get_initial_state(n):
     return (tuple(range(n, 0, -1)), (), ())
 
-# Goal state
+# Goal stateA
 def get_goal_state(n):
     return ((), (), tuple(range(n, 0, -1)))
 
