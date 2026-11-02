@@ -10,7 +10,7 @@ def cost(p):
 
 beam = [[0, 1, 2, 3], [0, 2, 3, 1]]
 
-for _ in range(5):
+for step in range(5):
     new = []
 
     for p in beam:
@@ -22,8 +22,12 @@ for _ in range(5):
 
     beam = sorted(new, key=cost)[:2]
 
+    print("Step", step + 1)
+    for p in beam:
+        print("Path:", p + [p[0]], "Cost:", cost(p))
+    print()
+
 best = min(beam, key=cost)
 
 print("Best Path:", best + [best[0]])
 print("Minimum Distance:", cost(best))
-
